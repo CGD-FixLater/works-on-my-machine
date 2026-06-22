@@ -95,8 +95,8 @@ lua_gears.cc:167] LuaProcessor::ProcessKeyEvent of *select_character error(2): a
 ```bash
 cd ~/.config/ibus/rime
 cp rime_ice.schema.yaml rime_ice.schema.yaml.bak          # 先备份
-sed -i -E 's/^(    - lua_)/    # 砍lua \1/' rime_ice.schema.yaml
-grep -nE '^    - lua_' rime_ice.schema.yaml && echo "还有残留!" || echo "已无生效 lua 组件"
+sed -i -E 's/^([[:space:]]*)- lua_/\1# 砍lua - lua_/' rime_ice.schema.yaml   # 缩进用 [[:space:]]* 而非写死 4 空格，上游改缩进也不会砍空
+grep -nE '^[[:space:]]*- lua_' rime_ice.schema.yaml && echo "还有残留!" || echo "已无生效 lua 组件"
 ```
 
 被砍掉的是 processors / translators / filters 里的 Lua 项，包括：
