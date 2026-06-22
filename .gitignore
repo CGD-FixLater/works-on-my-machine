@@ -1,0 +1,19 @@
+# 操作系统 / 编辑器杂物
+.DS_Store
+Thumbs.db
+*~
+*.swp
+.idea/
+.vscode/
+
+# 临时 / 备份文件
+*.bak
+*.tmp
+*.log
+
+# 敏感信息（防误提交）—— 如确需收录，请先脱敏
+*.key
+*.pem
+*.token
+*secret*
+.env
